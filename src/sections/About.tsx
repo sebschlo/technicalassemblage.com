@@ -25,9 +25,13 @@ export function About() {
           work and carry it through to something durable, considered, and intuitive.
         </p>
         <p className={styles.body}>
-          Founded by Sebastian Schloesser, the practice draws on years spent
-          building across consumer technology, fintech, research, and creative
-          studios.
+          We specialize in medium-sized businesses ready to modernize — streamlining
+          the systems they run on and putting AI to work where it actually moves the
+          needle.
+        </p>
+        <p className={styles.body}>
+          The practice draws on years spent building across consumer technology,
+          fintech, research, and creative studios.
         </p>
 
         <div className={styles.experienceLabel}>Experience from</div>

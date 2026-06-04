@@ -57,12 +57,7 @@ const offerings: Offering[] = [
       'Parametric and procedural geometry',
       'Interactive web experiences',
     ],
-    stories: [
-      {
-        client: 'Selected work',
-        blurb: 'Case studies coming soon.',
-      },
-    ],
+    stories: [],
   },
 ];
 
@@ -88,31 +83,40 @@ export function Services() {
                 ))}
               </ul>
 
-              <div className={styles.storiesLabel}>Customer success stories</div>
-              <ul className={styles.stories}>
-                {o.stories.map((s) => (
-                  <li className={styles.story} key={s.client}>
-                    <div className={styles.storyImage}>
-                      {s.logo ? (
-                        <img
-                          src={s.logo}
-                          alt={`${s.client} logo`}
-                          className={`${styles.storyLogo} ${
-                            s.invertLogo ? styles.storyLogoInvert : ''
-                          }`}
-                          loading="lazy"
-                        />
-                      ) : (
-                        <span className={styles.storyImageLabel} aria-hidden="true">
-                          Image
-                        </span>
-                      )}
-                    </div>
-                    <div className={styles.storyClient}>{s.client}</div>
-                    <p className={styles.storyBlurb}>{s.blurb}</p>
-                  </li>
-                ))}
-              </ul>
+              {o.stories.length > 0 && (
+                <>
+                  <div className={styles.storiesLabel}>
+                    Customer success stories
+                  </div>
+                  <ul className={styles.stories}>
+                    {o.stories.map((s) => (
+                      <li className={styles.story} key={s.client}>
+                        <div className={styles.storyImage}>
+                          {s.logo ? (
+                            <img
+                              src={s.logo}
+                              alt={`${s.client} logo`}
+                              className={`${styles.storyLogo} ${
+                                s.invertLogo ? styles.storyLogoInvert : ''
+                              }`}
+                              loading="lazy"
+                            />
+                          ) : (
+                            <span
+                              className={styles.storyImageLabel}
+                              aria-hidden="true"
+                            >
+                              Image
+                            </span>
+                          )}
+                        </div>
+                        <div className={styles.storyClient}>{s.client}</div>
+                        <p className={styles.storyBlurb}>{s.blurb}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
           ))}
         </div>

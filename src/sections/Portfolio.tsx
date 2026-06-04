@@ -34,6 +34,10 @@ export function Portfolio() {
       <div className={styles.inner}>
         <div className={styles.eyebrow}>Product Portfolio</div>
         <h2 className={styles.heading}>Things we've built.</h2>
+        <p className={styles.body}>
+          Beyond client work, we design and ship our own digital products —
+          independent bets we build and run end to end. Two are launching soon.
+        </p>
 
         <div className={styles.portfolio}>
           {projects.map((p) => (
@@ -43,7 +47,10 @@ export function Portfolio() {
               onClick={() => setActive(p.name)}
             >
               <div className={styles.projectKicker}>{p.category}</div>
-              <h3 className={styles.projectName}>{p.name}</h3>
+              <h3 className={styles.projectName}>
+                {p.name}
+                <sup className={styles.tm}>™</sup>
+              </h3>
               <p className={styles.projectBody}>{p.description}</p>
 
               <div className={styles.projectFoot}>

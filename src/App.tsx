@@ -6,6 +6,7 @@ import { About } from './sections/About';
 import { Services } from './sections/Services';
 import { Portfolio } from './sections/Portfolio';
 import { Contact } from './sections/Contact';
+import { Footer } from './components/Footer';
 import styles from './styles/App.module.css';
 
 export function App() {
@@ -25,6 +26,7 @@ export function App() {
         <Services />
         <Portfolio />
         <Contact />
+        <Footer />
       </main>
     </>
   );

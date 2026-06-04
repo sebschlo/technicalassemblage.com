@@ -236,6 +236,13 @@
   font-size: clamp(1.5rem, 2.6vw, 2rem);
 }
 
+.tm {
+  font-size: 0.4em;
+  vertical-align: super;
+  margin-left: 0.15em;
+  color: var(--fg-dim);
+}
+
 .projectKicker {
   font-family: var(--font-mono);
   font-size: 0.7rem;
