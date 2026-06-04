@@ -1,4 +1,5 @@
 import { useSmoothScroll } from './hooks/useSmoothScroll';
+import { Nav } from './components/Nav';
 import { Scene } from './scene/Scene';
 import { Hero } from './sections/Hero';
 import { About } from './sections/About';
@@ -15,6 +16,8 @@ export function App() {
       <div className={styles.sceneLayer}>
         <Scene />
       </div>
+
+      <Nav />
 
       <main className={styles.content}>
         <Hero />

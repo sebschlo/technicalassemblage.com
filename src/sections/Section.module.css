@@ -33,6 +33,65 @@
   margin-top: 2rem;
 }
 
+/* --- about: experience wall --- */
+.experienceLabel {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--fg-dim);
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+}
+
+.experience {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.75rem clamp(2.5rem, 5vw, 4rem);
+}
+
+.experience li {
+  display: inline-flex;
+  align-items: center;
+}
+
+.experienceLink {
+  display: inline-flex;
+  align-items: center;
+  color: var(--fg-dim);
+  opacity: 0.7;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.experienceLink:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* monochrome brand mark, tinted via mask so it inherits text color */
+.logo {
+  display: inline-block;
+  width: clamp(2.2rem, 3.4vw, 3rem);
+  height: clamp(2.2rem, 3.4vw, 3rem);
+  background-color: currentColor;
+  -webkit-mask: var(--logo) center / contain no-repeat;
+  mask: var(--logo) center / contain no-repeat;
+}
+
+/* Breakfast wordmark — matches breakfaststudio.com: Inter, caps, light, wide tracking */
+.logoWord {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.7vw, 2.05rem);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: currentColor;
+}
+
 /* --- offerings (Services sub-blocks) --- */
 .offerings {
   margin-top: 4rem;
@@ -68,29 +127,87 @@
   margin-bottom: 1rem;
 }
 
+.skills {
+  list-style: none;
+  margin: 0 0 0.5rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skill {
+  font-size: 0.85rem;
+  color: var(--fg);
+  border: 1px solid rgba(242, 240, 234, 0.16);
+  padding: 0.45rem 0.85rem;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.skill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .stories {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.75rem;
+  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
 }
 
-.stories li {
-  color: var(--fg);
-  padding-left: 1.25rem;
-  position: relative;
+.story {
+  display: flex;
+  flex-direction: column;
 }
 
-.stories li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.65em;
-  width: 0.45rem;
-  height: 0.45rem;
-  background: var(--accent);
-  transform: translateY(-50%) rotate(45deg);
+.storyImage {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  margin-bottom: 1.1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(196, 255, 58, 0.06),
+    rgba(242, 240, 234, 0.025)
+  );
+  border: 1px solid rgba(242, 240, 234, 0.1);
+  overflow: hidden;
+}
+
+.storyImageLabel {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--fg-dim);
+  opacity: 0.6;
+}
+
+.storyLogo {
+  max-width: 80%;
+  max-height: 65%;
+  object-fit: contain;
+}
+
+.storyLogoInvert {
+  filter: invert(1);
+}
+
+.storyClient {
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.storyBlurb {
+  color: var(--fg-dim);
+  font-size: 0.95rem;
+  margin-top: 0.45rem;
 }
 
 /* --- portfolio --- */
@@ -102,8 +219,11 @@
 }
 
 .project {
+  display: flex;
+  flex-direction: column;
   border: 1px solid rgba(242, 240, 234, 0.12);
   padding: 2rem;
+  cursor: pointer;
   transition: border-color 0.4s ease, transform 0.4s ease;
 }
 
@@ -128,6 +248,68 @@
 .projectBody {
   color: var(--fg-dim);
   margin-top: 1rem;
+}
+
+.projectFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.75rem;
+}
+
+.projectStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--fg-dim);
+}
+
+.projectCta {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  transition: opacity 0.2s ease;
+}
+
+.projectCta:hover {
+  opacity: 0.7;
+}
+
+.projectStatus::before {
+  content: '';
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(196, 255, 58, 0.5);
+  animation: statusPulse 2.4s ease-out infinite;
+}
+
+@keyframes statusPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(196, 255, 58, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 0.5rem rgba(196, 255, 58, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(196, 255, 58, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projectStatus::before {
+    animation: none;
+  }
 }
 
 /* --- contact --- */

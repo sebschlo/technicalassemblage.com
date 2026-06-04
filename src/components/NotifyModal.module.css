@@ -1,0 +1,70 @@
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.1;
+}
+
+.copy {
+  color: var(--fg-dim);
+  margin-top: 1rem;
+  max-width: 36ch;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.input {
+  flex: 1 1 12rem;
+  min-width: 0;
+  background: transparent;
+  border: 1px solid rgba(242, 240, 234, 0.2);
+  color: var(--fg);
+  font-size: 1rem;
+  padding: 0.85rem 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.input::placeholder {
+  color: var(--fg-dim);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.button {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.4rem;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.button:hover {
+  opacity: 0.85;
+}
+
+.success .button {
+  margin-top: 1.75rem;
+}
+
+.error {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ff6b5e;
+}
