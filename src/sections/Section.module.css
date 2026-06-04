@@ -32,3 +32,114 @@
   max-width: 60ch;
   margin-top: 2rem;
 }
+
+/* --- offerings (Services sub-blocks) --- */
+.offerings {
+  margin-top: 4rem;
+  display: grid;
+  gap: 4rem;
+}
+
+.offering {
+  border-top: 1px solid rgba(242, 240, 234, 0.12);
+  padding-top: 2rem;
+}
+
+.offeringTitle {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 1.1;
+  max-width: 20ch;
+}
+
+.offeringBody {
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  color: var(--fg-dim);
+  max-width: 56ch;
+  margin-top: 1.25rem;
+}
+
+.storiesLabel {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--fg-dim);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.stories {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.stories li {
+  color: var(--fg);
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.stories li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 0.45rem;
+  height: 0.45rem;
+  background: var(--accent);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* --- portfolio --- */
+.portfolio {
+  margin-top: 4rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+}
+
+.project {
+  border: 1px solid rgba(242, 240, 234, 0.12);
+  padding: 2rem;
+  transition: border-color 0.4s ease, transform 0.4s ease;
+}
+
+.project:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.projectName {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+}
+
+.projectKicker {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.projectBody {
+  color: var(--fg-dim);
+  margin-top: 1rem;
+}
+
+/* --- contact --- */
+.contactLink {
+  display: inline-block;
+  margin-top: 2.5rem;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 0.2rem;
+  transition: opacity 0.3s ease;
+}
+
+.contactLink:hover {
+  opacity: 0.7;
+}

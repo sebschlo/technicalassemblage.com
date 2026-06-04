@@ -3,7 +3,7 @@ import { Scene } from './scene/Scene';
 import { Hero } from './sections/Hero';
 import { About } from './sections/About';
 import { Services } from './sections/Services';
-import { Work } from './sections/Work';
+import { Portfolio } from './sections/Portfolio';
 import { Contact } from './sections/Contact';
 import styles from './styles/App.module.css';
 
@@ -20,7 +20,7 @@ export function App() {
         <Hero />
         <About />
         <Services />
-        <Work />
+        <Portfolio />
         <Contact />
       </main>
     </>
