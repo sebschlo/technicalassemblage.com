@@ -18,29 +18,29 @@ const offerings: Offering[] = [
   {
     title: 'Technology Consulting & Software Development',
     description:
-      'We design and build the systems a business runs on — and advise on the processes around them.',
+      'Drawing from years of experience at companies from all sizes, we design and build the systems a business runs on — and advise on the processes around them — offering holistic solutions that actually yield results.',
     skills: [
+      'General process and technology consulting',
       'Mobile development',
       'Web development',
       'AI and automation',
-      'Custom solutions',
-      'General process and technology consulting',
+      'Custom ERP and CRM solutions',
     ],
     stories: [
       {
         client: 'maprimaq',
-        blurb: 'Custom CRM and ERP build-out with general process consulting.',
+        blurb: "Built custom CRM and ERP with AI integrations and workflows, elevating Maprimaq's unparalleled 65 of experience with cutting edge technology.",
       },
       {
         client: 'Grupo REMM',
         blurb:
-          'Automated purchase-order processing and matching against live inventory.',
+          'Automated purchase-order processing and matching against live inventory, vastly accelerating data entry processes.',
         logo: '/logos/remm.png',
       },
       {
         client: 'Mitchell Denburg',
         blurb:
-          'Process and technology consulting, including email platform migrations.',
+          'Advised through major revamp and migration of software platforms and providers.',
         logo: '/logos/mitchell.webp',
         invertLogo: true,
       },
@@ -52,8 +52,9 @@ const offerings: Offering[] = [
       'Interactive, experiential, and design-led work — where engineering and craft meet to make something people remember.',
     skills: [
       '3D modeling',
-      '3D rendering and animation',
-      'Parametric modeling',
+      'Rendering and animation',
+      'Spatial audio and acoustic modeling',
+      'Parametric and procedural geometry',
       'Interactive web experiences',
     ],
     stories: [

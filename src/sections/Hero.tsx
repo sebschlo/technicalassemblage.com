@@ -6,7 +6,7 @@ export function Hero() {
       <div className={styles.inner}>
         <div className={styles.eyebrow}>Technical Assemblage LLC</div>
         <h1 className={styles.heading}>
-          Software, assembled with intention.
+          Technology, assembled with intention.
         </h1>
         <p className={styles.body}>
           A consulting and development practice for teams who care how

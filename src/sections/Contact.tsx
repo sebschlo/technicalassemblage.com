@@ -6,8 +6,8 @@ export function Contact() {
       <div className={styles.inner}>
         <div className={styles.eyebrow}>Contact</div>
         <h2 className={styles.heading}>Let's build something deliberate.</h2>
-        <a className={styles.contactLink} href="mailto:hello@technicalassemblage.com">
-          hello@technicalassemblage.com
+        <a className={styles.contactLink} href="mailto:info@technicalassemblage.com">
+          info@technicalassemblage.com
         </a>
       </div>
     </section>

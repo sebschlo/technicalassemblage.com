@@ -20,15 +20,14 @@ export function About() {
         </h2>
 
         <p className={styles.body}>
-          Technical Assemblage designs and builds software for teams who care
-          how the thing is made. We take on the ambiguous, high-stakes
-          work&nbsp;— architecture, prototypes, and products&nbsp;— and carry it
-          through to something durable, considered, and quietly ambitious.
+          Technical Assemblage designs and builds digital solutions for teams who care
+          about process and usability. We take on the ambiguous, high-stakes
+          work and carry it through to something durable, considered, and intuitive.
         </p>
         <p className={styles.body}>
           Founded by Sebastian Schloesser, the practice draws on years spent
           building across consumer technology, fintech, research, and creative
-          studios&nbsp;— at scale and at the edges.
+          studios.
         </p>
 
         <div className={styles.experienceLabel}>Experience from</div>

@@ -14,14 +14,14 @@ const projects: Project[] = [
     name: 'Citylap',
     category: 'Consumer · Mobile',
     description:
-      'A privacy-first location app for the people you actually care about. Citylap keeps friends and family loosely in sync — who is in town, who is heading where — with end-to-end encryption on every coordinate and granular control over who sees what. A built-in time machine lets you revisit past locations and share future plans.',
+      'A privacy-first location app for the people you care about. Citylap keeps friends and family in sync — who is in town, who is heading where — with end-to-end encryption on every coordinate, no reliance on 3rd party geolocation APIs, and granular control over who sees what. A time machine view on the map lets you revisit past locations and share future plans.',
     status: 'Ships Q3 2026',
   },
   {
     name: 'Odoo Spoken CRM',
     category: 'B2B · Sales tooling',
     description:
-      'A voice-driven CRM layer for Odoo, built for sales teams who work on the move. Speak naturally and a language model routes the request through the right CRM actions — logging meetings, capturing contacts and their roles, and tracking travel and on-site time for every visit. No forms, no clicks.',
+      "A voice-driven CRM interface for Odoo CRM, built for sales teams who work on the move and don't have time to sit down and write endless notes. Speak naturally and a language model routes the request through the right CRM actions — logging meetings, capturing contacts and their roles, and tracking travel and on-site time for every visit. Includes an MCP server to connect via your favorite AI chatbot.",
     status: 'Ships Q3 2026',
   },
 ];
