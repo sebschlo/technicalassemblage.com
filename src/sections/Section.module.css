@@ -1,0 +1,34 @@
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem var(--gutter);
+}
+
+.inner {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--fg-dim);
+  margin-bottom: 1.5rem;
+}
+
+.heading {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.05;
+  max-width: 18ch;
+}
+
+.body {
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  color: var(--fg-dim);
+  max-width: 60ch;
+  margin-top: 2rem;
+}
