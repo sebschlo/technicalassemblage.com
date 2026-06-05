@@ -30,6 +30,7 @@ const offerings: Offering[] = [
       {
         client: 'maprimaq',
         blurb: "Built custom CRM and ERP with AI integrations and workflows, elevating Maprimaq's unparalleled 65 of experience with cutting edge technology.",
+        logo: '/logos/maprimaq.png',
       },
       {
         client: 'Grupo REMM',
