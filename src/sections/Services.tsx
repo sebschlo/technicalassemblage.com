@@ -42,7 +42,7 @@ const offerings: Offering[] = [
         client: 'Mitchell Denburg',
         blurb:
           'Advised through major revamp and migration of software platforms and providers.',
-        logo: '/logos/mitchell.webp',
+        logo: '/logos/mitchell.png',
         invertLogo: true,
       },
     ],
