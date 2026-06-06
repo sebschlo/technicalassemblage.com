@@ -11,6 +11,13 @@
   margin: 0 auto;
 }
 
+.heroMark {
+  display: block;
+  width: clamp(3.5rem, 7vw, 5.5rem);
+  height: auto;
+  margin-bottom: 2rem;
+}
+
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 0.75rem;

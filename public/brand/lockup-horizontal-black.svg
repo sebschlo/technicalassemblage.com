@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 200" width="840" height="200">
+  
+  <g transform="translate(24,20) scale(1.6)" fill="none" stroke="#0a0a0a" stroke-width="6.5">
+    <line x1="50" y1="25" x2="26" y2="73" stroke-linecap="round"></line>
+    <line x1="50" y1="25" x2="74" y2="73" stroke-linecap="round"></line>
+    <line x1="34" y1="58" x2="66" y2="58" stroke-linecap="round"></line>
+    <line x1="50" y1="58" x2="50" y2="84" stroke-linecap="butt"></line>
+    <circle cx="50" cy="25" r="8.5" fill="#0a0a0a" stroke="none"></circle>
+    <circle cx="26" cy="73" r="8.5" fill="#0a0a0a" stroke="none"></circle>
+    <circle cx="74" cy="73" r="8.5" fill="#0a0a0a" stroke="none"></circle>
+  </g>
+  <text class="wm" x="214" y="121">Technical Assemblage</text>
+</svg>
