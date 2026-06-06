@@ -9,6 +9,16 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 1.25rem var(--gutter);
+}
+
+/* Blur/gradient live on a pseudo-layer rather than .nav itself, so .nav does
+   not become the containing block for the position:fixed mobile links pill. */
+.nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background: linear-gradient(
     to bottom,
     rgba(10, 10, 10, 0.7),
@@ -72,12 +82,31 @@
 }
 
 @media (max-width: 640px) {
+  /* Detach the links from the top row and float them as a centered
+     bottom pill — thumb-reachable and never colliding with the brand. */
   .links {
-    gap: 1rem;
+    position: fixed;
+    left: 50%;
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    transform: translateX(-50%);
+    gap: clamp(1rem, 5vw, 1.75rem);
+    padding: 0.7rem 1.25rem;
+    border-radius: 999px;
+    background: rgba(20, 20, 20, 0.6);
+    border: 1px solid rgba(242, 240, 234, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   }
 
   .link {
-    font-size: 0.65rem;
+    font-size: 0.68rem;
     letter-spacing: 0.1em;
+    color: var(--fg);
+  }
+
+  /* Underline indicator reads awkwardly inside the pill; drop it. */
+  .link::after {
+    display: none;
   }
 }
