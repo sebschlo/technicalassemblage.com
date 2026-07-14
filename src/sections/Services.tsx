@@ -28,14 +28,14 @@ const offerings: Offering[] = [
     ],
     stories: [
       {
-        client: 'maprimaq',
-        blurb: "Built custom CRM and ERP with AI integrations and workflows, elevating Maprimaq's unparalleled 65 of experience with cutting edge technology.",
+        client: 'Maprimaq',
+        blurb: "Built custom CRM and ERP with AI integrations and workflows, elevating Maprimaq's unparalleled 65 years of experience providing cutting edge industrial technology.",
         logo: '/logos/maprimaq.png',
       },
       {
         client: 'Grupo REMM',
         blurb:
-          'Automated purchase-order processing and matching against live inventory, vastly accelerating data entry processes.',
+          'Developed custom purchase-order processing pipeline, matching against live inventory and integrating with ERP, vastly accelerating data entry processes.',
         logo: '/logos/remm.png',
       },
       {
@@ -50,7 +50,7 @@ const offerings: Offering[] = [
   {
     title: 'Creative Technology & Design',
     description:
-      'Interactive, experiential, and design-led work — where engineering and craft meet to make something people remember.',
+      'Interactive, experiential, and design-led work — where engineering and design meet to make something memorable.',
     skills: [
       '3D modeling',
       'Rendering and animation',

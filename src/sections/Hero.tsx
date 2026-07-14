@@ -16,8 +16,7 @@ export function Hero() {
           Technology, assembled with intention.
         </h1>
         <p className={styles.body}>
-          A consulting and development practice for teams who care how
-          the thing is built, not just whether it ships.
+          A consulting and development practice for teams who care about craft.
         </p>
       </div>
     </section>
