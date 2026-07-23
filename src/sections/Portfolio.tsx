@@ -7,6 +7,7 @@ type Project = {
   category: string;
   description: string;
   status: string;
+  url?: string;
 };
 
 const projects: Project[] = [
@@ -16,6 +17,7 @@ const projects: Project[] = [
     description:
       'A privacy-first location app for the people you care about. Citylap keeps friends and family in sync — who is in town, who is heading where — with end-to-end encryption on every coordinate, no reliance on 3rd party geolocation APIs, and granular control over who sees what. A time machine view on the map lets you revisit past locations and share future plans.',
     status: 'Ships Q3 2026',
+    url: 'https://getcitylap.com',
   },
   {
     name: 'Odoo Spoken CRM',
@@ -44,7 +46,11 @@ export function Portfolio() {
             <article
               className={styles.project}
               key={p.name}
-              onClick={() => setActive(p.name)}
+              onClick={() =>
+                p.url
+                  ? window.open(p.url, '_blank', 'noopener,noreferrer')
+                  : setActive(p.name)
+              }
             >
               <div className={styles.projectKicker}>{p.category}</div>
               <h3 className={styles.projectName}>
@@ -55,15 +61,27 @@ export function Portfolio() {
 
               <div className={styles.projectFoot}>
                 <div className={styles.projectStatus}>{p.status}</div>
-                <button
-                  className={styles.projectCta}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setActive(p.name);
-                  }}
-                >
-                  Stay in the loop →
-                </button>
+                {p.url ? (
+                  <a
+                    className={styles.projectCta}
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Visit getcitylap.com →
+                  </a>
+                ) : (
+                  <button
+                    className={styles.projectCta}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActive(p.name);
+                    }}
+                  >
+                    Stay in the loop →
+                  </button>
+                )}
               </div>
             </article>
           ))}

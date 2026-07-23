@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import styles from './Section.module.css';
 
 type Story = {
   client: string;
   blurb: string;
+  url: string;
+  skills: string[];
   logo?: string;
   invertLogo?: boolean;
 };
@@ -29,17 +32,28 @@ const offerings: Offering[] = [
     stories: [
       {
         client: 'Maprimaq',
+        url: 'https://www.maprimaq.com/',
+        skills: [
+          'General process and technology consulting',
+          'Web development',
+          'AI and automation',
+          'Custom ERP and CRM solutions',
+        ],
         blurb: "Built custom CRM and ERP with AI integrations and workflows, elevating Maprimaq's unparalleled 65 years of experience providing cutting edge industrial technology.",
         logo: '/logos/maprimaq.png',
       },
       {
         client: 'Grupo REMM',
+        url: 'https://www.gruporemm.com/',
+        skills: ['AI and automation', 'Custom ERP and CRM solutions'],
         blurb:
           'Developed custom purchase-order processing pipeline, matching against live inventory and integrating with ERP, vastly accelerating data entry processes.',
         logo: '/logos/remm.png',
       },
       {
-        client: 'Mitchell Denburg',
+        client: 'Mitchell Denburg Collection',
+        url: 'https://www.mitchelldenburg.com/',
+        skills: ['General process and technology consulting'],
         blurb:
           'Advised through major revamp and migration of software platforms and providers.',
         logo: '/logos/mitchell.png',
@@ -58,9 +72,90 @@ const offerings: Offering[] = [
       'Parametric and procedural geometry',
       'Interactive web experiences',
     ],
-    stories: [],
+    stories: [
+      {
+        client: 'Wheelhouse',
+        blurb:
+          'Produced 3D animations of industrial machinery, bringing complex equipment to life for marketing and product storytelling.',
+        url: 'https://wheelhouse.io/',
+        skills: ['3D modeling', 'Rendering and animation'],
+        logo: '/logos/wheelhouse.svg',
+      },
+    ],
   },
 ];
+
+function OfferingBlock({ offering }: { offering: Offering }) {
+  const [hovered, setHovered] = useState<string | null>(null);
+  const highlighted = offering.stories.find((s) => s.client === hovered)?.skills;
+
+  return (
+    <div className={styles.offering}>
+      <h3 className={styles.offeringTitle}>{offering.title}</h3>
+      <p className={styles.offeringBody}>{offering.description}</p>
+
+      <div className={styles.storiesLabel}>Capabilities</div>
+      <ul className={styles.skills}>
+        {offering.skills.map((s) => (
+          <li
+            className={`${styles.skill} ${
+              highlighted
+                ? highlighted.includes(s)
+                  ? styles.skillActive
+                  : styles.skillDimmed
+                : ''
+            }`}
+            key={s}
+          >
+            {s}
+          </li>
+        ))}
+      </ul>
+
+      {offering.stories.length > 0 && (
+        <>
+          <div className={styles.storiesLabel}>Customer success stories</div>
+          <ul className={styles.stories}>
+            {offering.stories.map((s) => (
+              <li className={styles.story} key={s.client}>
+                <a
+                  className={styles.storyLink}
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onMouseEnter={() => setHovered(s.client)}
+                  onMouseLeave={() => setHovered(null)}
+                >
+                  <div className={styles.storyImage}>
+                    {s.logo ? (
+                      <img
+                        src={s.logo}
+                        alt={`${s.client} logo`}
+                        className={`${styles.storyLogo} ${
+                          s.invertLogo ? styles.storyLogoInvert : ''
+                        }`}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <span
+                        className={styles.storyImageLabel}
+                        aria-hidden="true"
+                      >
+                        Image
+                      </span>
+                    )}
+                  </div>
+                  <div className={styles.storyClient}>{s.client}</div>
+                  <p className={styles.storyBlurb}>{s.blurb}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </div>
+  );
+}
 
 export function Services() {
   return (
@@ -71,54 +166,7 @@ export function Services() {
 
         <div className={styles.offerings}>
           {offerings.map((o) => (
-            <div className={styles.offering} key={o.title}>
-              <h3 className={styles.offeringTitle}>{o.title}</h3>
-              <p className={styles.offeringBody}>{o.description}</p>
-
-              <div className={styles.storiesLabel}>Capabilities</div>
-              <ul className={styles.skills}>
-                {o.skills.map((s) => (
-                  <li className={styles.skill} key={s}>
-                    {s}
-                  </li>
-                ))}
-              </ul>
-
-              {o.stories.length > 0 && (
-                <>
-                  <div className={styles.storiesLabel}>
-                    Customer success stories
-                  </div>
-                  <ul className={styles.stories}>
-                    {o.stories.map((s) => (
-                      <li className={styles.story} key={s.client}>
-                        <div className={styles.storyImage}>
-                          {s.logo ? (
-                            <img
-                              src={s.logo}
-                              alt={`${s.client} logo`}
-                              className={`${styles.storyLogo} ${
-                                s.invertLogo ? styles.storyLogoInvert : ''
-                              }`}
-                              loading="lazy"
-                            />
-                          ) : (
-                            <span
-                              className={styles.storyImageLabel}
-                              aria-hidden="true"
-                            >
-                              Image
-                            </span>
-                          )}
-                        </div>
-                        <div className={styles.storyClient}>{s.client}</div>
-                        <p className={styles.storyBlurb}>{s.blurb}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
-            </div>
+            <OfferingBlock offering={o} key={o.title} />
           ))}
         </div>
       </div>
