@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spoken CRM — Talk to your CRM, right inside Odoo</title>
+  <meta name="description" content="Spoken CRM adds an AI assistant to Odoo Discuss: read and update your pipeline by chat or voice note, get proactive nudges, and connect external AI clients via MCP." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #4f46e5;
+      --border: #e5e7eb;
+      --card: #f9fafb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1115;
+        --text: #f3f4f6;
+        --muted: #9ca3af;
+        --accent: #818cf8;
+        --border: #262b33;
+        --card: #171a20;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 20px 64px; }
+    header { text-align: center; margin-bottom: 40px; }
+    h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 12px; }
+    .tagline { font-size: 1.15rem; color: var(--muted); max-width: 620px; margin: 0 auto; }
+    img.shot {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin: 32px 0;
+      display: block;
+    }
+    h2 { font-size: 1.3rem; margin: 36px 0 12px; }
+    ul.features { list-style: none; padding: 0; }
+    ul.features li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      color: var(--muted);
+    }
+    ul.features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    ul.features b { color: var(--text); }
+    .cta {
+      text-align: center;
+      margin: 44px 0;
+      padding: 32px 24px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .cta .price { font-size: 1.6rem; font-weight: 700; margin-bottom: 4px; }
+    .cta .price small { font-size: 0.95rem; font-weight: 400; color: var(--muted); }
+    .button {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 28px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .fine { font-size: 0.9rem; color: var(--muted); margin-top: 14px; }
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      padding-top: 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Spoken CRM</h1>
+      <p class="tagline">
+        An AI assistant for Odoo 18 that lives in Discuss. Your team reads and
+        updates the CRM through natural conversation — typed or spoken — right
+        where they already chat.
+      </p>
+    </header>
+
+    <img class="shot" src="screenshot_chat.png" alt="Chatting with the Spoken CRM bot in Odoo Discuss" />
+
+    <h2>What it does</h2>
+    <ul class="features">
+      <li><b>Chat &amp; voice</b> — type or send a voice note; audio is transcribed automatically and the bot replies in your language (English and Spanish included).</li>
+      <li><b>Real CRM actions</b> — search and rank opportunities, create and update deals and contacts, schedule activities and mark them done, log notes — rendered as rich clickable cards.</li>
+      <li><b>Proactive nudges</b> — the bot reviews each enrolled user's pipeline morning and afternoon, in their own timezone, and DMs a heads-up when something needs attention.</li>
+      <li><b>MCP server</b> — an optional read-only endpoint (OAuth 2.1 + PKCE) lets external AI clients like claude.ai query your pipeline, limited to admin-approved fields.</li>
+      <li><b>Permission-safe</b> — every action runs as the requesting user; Odoo access rights and record rules always apply.</li>
+      <li><b>Private by design</b> — your own Anthropic/OpenAI API keys, no telemetry, nothing sent to the module author.</li>
+    </ul>
+
+    <div class="cta">
+      <p class="price">$199 <small>one-time, per Odoo instance</small></p>
+      <p style="color: var(--muted);">For Odoo 18 — Community and Enterprise.</p>
+      <a class="button" href="https://apps.odoo.com/apps/modules/18.0/spoken_crm">Get it on the Odoo App Store</a>
+      <p class="fine">Requires an Anthropic or OpenAI API key. Voice notes use OpenAI Whisper.</p>
+    </div>
+
+    <footer>
+      <p>Questions or support: <a href="mailto:info@technicalassemblage.com">info@technicalassemblage.com</a></p>
+      <p style="margin-top: 8px;">Built by <a href="https://technicalassemblage.com">Technical Assemblage</a></p>
+    </footer>
+  </main>
+</body>
+</html>
