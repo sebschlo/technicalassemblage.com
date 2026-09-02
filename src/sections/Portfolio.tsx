@@ -17,7 +17,7 @@ const projects: Project[] = [
     category: 'Consumer · Mobile',
     description:
       'A privacy-first location app for the people you care about. Citylap keeps friends and family in sync — who is in town, who is heading where — with end-to-end encryption on every coordinate, no reliance on 3rd party geolocation APIs, and granular control over who sees what. A time machine view on the map lets you revisit past locations and share future plans.',
-    status: 'Ships Q3 2026',
+    status: 'Available now',
     url: 'https://getcitylap.com',
     cta: 'Visit getcitylap.com →',
   },
@@ -29,6 +29,15 @@ const projects: Project[] = [
     status: 'Available now',
     url: 'https://apps.odoo.com/apps/modules/18.0/spoken_crm',
     cta: 'Get it on the Odoo App Store →',
+  },
+  {
+    name: 'NeverMiss',
+    category: 'Consumer · iOS',
+    description:
+      'A real alarm for every meeting. NeverMiss reads every calendar synced to your iPhone and rings a full-screen alarm before each one — through silent mode and Focus, until you dismiss it. Two lead times per meeting by default, one tap into the Zoom, Meet or Teams call, and nothing ever leaves the device.',
+    status: 'Coming to the App Store',
+    url: '/nevermiss/',
+    cta: 'Learn more →',
   },
 ];
 
@@ -42,7 +51,7 @@ export function Portfolio() {
         <h2 className={styles.heading}>Things we've built.</h2>
         <p className={styles.body}>
           Beyond client work, we design and ship our own digital products —
-          independent bets we build and run end to end. Two are launching soon.
+          independent bets we build and run end to end.
         </p>
 
         <div className={styles.portfolio}>

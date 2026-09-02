@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NeverMiss — A real alarm for every meeting</title>
+  <meta name="description" content="NeverMiss reads every calendar on your iPhone and rings a real, full-screen alarm before each meeting — through silent mode and Focus, until you dismiss it. Nothing leaves the device." />
+  <link rel="icon" href="icon.png" type="image/png" />
+  <style>
+    :root {
+      --bg: #faf8f4;
+      --surface: #ffffff;
+      --text: #1a1b20;
+      --muted: #5c5d63;
+      --accent: #d1402e;
+      --border: #e6e2da;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1b20;
+        --surface: #22242a;
+        --text: #efeae1;
+        --muted: #a29d94;
+        --accent: #e85a45;
+        --border: #33363e;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 20px 64px; }
+    header { text-align: center; margin-bottom: 40px; }
+    .icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      margin: 0 auto 20px;
+      display: block;
+    }
+    h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 12px; }
+    .tagline { font-size: 1.15rem; color: var(--muted); max-width: 620px; margin: 0 auto; }
+    .shots {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 32px auto;
+      max-width: 620px;
+    }
+    .shots img {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      display: block;
+    }
+    @media (max-width: 520px) { .shots { grid-template-columns: 1fr; max-width: 320px; } }
+    h2 { font-size: 1.3rem; margin: 36px 0 12px; }
+    ul.features { list-style: none; padding: 0; }
+    ul.features li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      color: var(--muted);
+    }
+    ul.features li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 21px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    ul.features b { color: var(--text); }
+    .cta {
+      text-align: center;
+      margin: 44px 0;
+      padding: 32px 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .cta h2 { margin: 0 0 6px; }
+    .cta p { color: var(--muted); }
+    form {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    input[type="email"] {
+      flex: 1 1 240px;
+      max-width: 320px;
+      padding: 12px 14px;
+      font: inherit;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    input[type="email"]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .button {
+      padding: 12px 28px;
+      background: var(--accent);
+      color: #fff;
+      border: 0;
+      border-radius: 8px;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .button:disabled { opacity: 0.6; cursor: default; }
+    .msg { margin-top: 12px; font-size: 0.95rem; }
+    .msg.error { color: var(--accent); }
+    .fine { font-size: 0.9rem; color: var(--muted); margin-top: 14px; }
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      padding-top: 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img class="icon" src="icon.png" alt="NeverMiss app icon" />
+      <h1>NeverMiss</h1>
+      <p class="tagline">
+        A real alarm for every meeting. NeverMiss reads every calendar synced to
+        your iPhone and rings full-screen before each one — through silent mode
+        and Focus, until you dismiss it.
+      </p>
+    </header>
+
+    <div class="shots">
+      <img src="screenshot_list.png" alt="NeverMiss upcoming meetings list with armed alarms" />
+      <img src="screenshot_detail.png" alt="Meeting detail showing the alarm setting and a join video call link" />
+    </div>
+
+    <h2>What it does</h2>
+    <ul class="features">
+      <li><b>Real alarms, not notifications</b> — built on AlarmKit, so each alarm fires from the system even if the app is closed, breaks through silent mode and Focus, and keeps ringing until you act.</li>
+      <li><b>Every calendar you already have</b> — iCloud, Google, Outlook, Exchange: anything in the iPhone Calendar app. Nothing to connect or re-sync.</li>
+      <li><b>Two alarms per meeting</b> — 30 minutes and 2 minutes before by default. Pick your own lead times, add a day-of alarm for all-day events, or set a single meeting to Always or Never.</li>
+      <li><b>One tap into the call</b> — Zoom, Meet, Teams, Webex and FaceTime links are detected and the alarm opens them directly.</li>
+      <li><b>Stays out of the way</b> — declined invitations and hidden calendars are skipped, and quiet hours keep overnight meetings silent.</li>
+      <li><b>Private by design</b> — no account, no servers. Your calendar never leaves the device.</li>
+    </ul>
+
+    <div class="cta">
+      <h2>Coming to the App Store</h2>
+      <p>Leave your email and we'll let you know the moment it goes live.</p>
+      <form id="waitlist" novalidate>
+        <input type="email" name="email" placeholder="you@email.com" aria-label="Email address" required />
+        <button class="button" type="submit">Notify me</button>
+      </form>
+      <p class="msg" id="msg" role="status" aria-live="polite"></p>
+      <p class="fine">Requires iOS 26 or later.</p>
+    </div>
+
+    <footer>
+      <p>Questions or support: <a href="mailto:info@technicalassemblage.com">info@technicalassemblage.com</a></p>
+      <p style="margin-top: 8px;">Built by <a href="https://technicalassemblage.com" target="_blank" rel="noopener noreferrer">Technical Assemblage</a></p>
+    </footer>
+  </main>
+
+  <script>
+    // Same Buttondown embed-subscribe endpoint the main site's waitlist modal uses.
+    // Public username only; the no-cors response is opaque, so a sent POST counts as success.
+    (function () {
+      var form = document.getElementById('waitlist');
+      var msg = document.getElementById('msg');
+      var input = form.querySelector('input');
+      var button = form.querySelector('button');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = input.value.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          msg.className = 'msg error';
+          msg.textContent = 'Please enter a valid email address.';
+          input.focus();
+          return;
+        }
+        msg.className = 'msg';
+        msg.textContent = '';
+        button.disabled = true;
+        button.textContent = 'Adding…';
+        var body = new URLSearchParams({ email: email, tag: 'nevermiss' });
+        fetch('https://buttondown.com/api/emails/embed-subscribe/technicalassemblage', {
+          method: 'POST',
+          mode: 'no-cors',
+          body: body
+        }).then(function () {
+          form.hidden = true;
+          msg.textContent = "You're on the list. We'll be in touch when NeverMiss launches.";
+        }).catch(function () {
+          msg.className = 'msg error';
+          msg.textContent = 'Something went wrong. Please try again.';
+          button.disabled = false;
+          button.textContent = 'Notify me';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
