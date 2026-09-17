@@ -56,7 +56,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 20px;
       margin: 32px auto;
-      max-width: 620px;
+      max-width: 720px;
     }
     .shots img {
       width: 100%;
@@ -149,10 +149,12 @@
     </header>
 
     <div class="shots">
-      <img src="screenshot_pace.png" alt="Six months of running pace, faster runs higher on the axis, with the best run circled and a 19-day training break shaded" />
-      <img src="screenshot_effort.png" alt="Pace against heart rate as density contours, recent runs sitting above earlier ones" />
-      <img src="screenshot_steps.png" alt="Steps by time of day drawn as dot-matrix ridges in the Instrument theme" />
-      <img src="screenshot_matrix.png" alt="The same running pace chart in the phosphor-green Matrix theme" />
+      <!-- Device-native captures (1284 x 2778), unscaled: resampling softens the thin
+           chart strokes and the axis labels, which is the whole subject here. -->
+      <img src="screenshot_pace.png" width="1284" height="2778" alt="Six months of running pace, faster runs higher on the axis, with the best run circled and a 19-day training break shaded" />
+      <img src="screenshot_effort.png" width="1284" height="2778" alt="Pace against heart rate as density contours, recent runs sitting above earlier ones" />
+      <img src="screenshot_steps.png" width="1284" height="2778" loading="lazy" alt="Steps by time of day drawn as dot-matrix ridges in the Instrument theme" />
+      <img src="screenshot_matrix.png" width="1284" height="2778" loading="lazy" alt="The same running pace chart in the phosphor-green Matrix theme" />
     </div>
 
     <h2>What it draws</h2>
