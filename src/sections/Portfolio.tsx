@@ -39,6 +39,15 @@ const projects: Project[] = [
     url: '/nevermiss/',
     cta: 'Learn more →',
   },
+  {
+    name: 'Health Science',
+    category: 'Consumer · iOS',
+    description:
+      "Apple Health, actually charted. Health Science reads the years of running, sleep, steps, resting heart rate and weight already on your iPhone and draws what the Health app won't: every run on one axis, each week's pace spread as a ridge, and this season's pace against heart rate contoured over last season's. Five themes, and no networking code at all — nothing leaves the device.",
+    status: 'Coming to the App Store',
+    url: '/healthscience/',
+    cta: 'Learn more →',
+  },
 ];
 
 export function Portfolio() {

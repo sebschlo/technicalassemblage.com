@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Health Science app icon">
+  <rect width="1024" height="1024" fill="#F3EEE3"/>
+  <path d="M150,456.4 L205.7,456.4 C317,456.4 335.6,252.3 437.7,252.3 C539.7,252.3 558.3,456.4 688.2,456.4 L874,456.4 L874,456.4 L150,456.4 Z" fill="#F3EEE3"/>
+  <path d="M150,456.4 L205.7,456.4 C317,456.4 335.6,252.3 437.7,252.3 C539.7,252.3 558.3,456.4 688.2,456.4 L874,456.4" fill="none" stroke="#9AA9CF" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M150,604.9 L261.3,604.9 C372.7,604.9 409.8,363.6 521.2,363.6 C632.5,363.6 651.1,604.9 781,604.9 L874,604.9 L874,604.9 L150,604.9 Z" fill="#F3EEE3"/>
+  <path d="M150,604.9 L261.3,604.9 C372.7,604.9 409.8,363.6 521.2,363.6 C632.5,363.6 651.1,604.9 781,604.9 L874,604.9" fill="none" stroke="#6B82BE" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M150,772 L372.7,772 C484,772 521.2,475 632.5,475 C743.9,475 762.5,772 874,772 L874,772 L150,772 Z" fill="#F3EEE3"/>
+  <path d="M150,772 L372.7,772 C484,772 521.2,475 632.5,475 C743.9,475 762.5,772 874,772" fill="none" stroke="#2B4C9B" stroke-width="37" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
