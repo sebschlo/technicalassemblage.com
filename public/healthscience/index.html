@@ -60,6 +60,10 @@
     }
     .shots img {
       width: 100%;
+      /* Without this the height="2778" attribute survives as the used height and
+         the capture renders squashed to its column width. */
+      height: auto;
+      aspect-ratio: 1284 / 2778;
       border: 1px solid var(--border);
       border-radius: 24px;
       display: block;
