@@ -284,13 +284,34 @@
   color: var(--fg-dim);
 }
 
+.projectHead {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+.projectIcon {
+  flex: none;
+  width: 3.5rem;
+  height: 3.5rem;
+  /* App Store icons ship square; the rounding is the platform's, not the asset's. */
+  border-radius: 24%;
+  border: 1px solid rgba(242, 240, 234, 0.12);
+  object-fit: cover;
+  transition: border-color 0.4s ease;
+}
+
+.project:hover .projectIcon {
+  border-color: var(--accent);
+}
+
 .projectKicker {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
   color: var(--accent);
-  margin-bottom: 1rem;
+  margin-bottom: 0.35rem;
 }
 
 .projectBody {

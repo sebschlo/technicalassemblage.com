@@ -4,6 +4,7 @@ import styles from './Section.module.css';
 
 type Project = {
   name: string;
+  icon: string;
   category: string;
   description: string;
   status: string;
@@ -14,6 +15,7 @@ type Project = {
 const projects: Project[] = [
   {
     name: 'Citylap',
+    icon: '/logos/citylap-icon.svg',
     category: 'Consumer · Mobile',
     description:
       'A privacy-first location app for the people you care about. Citylap keeps friends and family in sync — who is in town, who is heading where — with end-to-end encryption on every coordinate, no reliance on 3rd party geolocation APIs, and granular control over who sees what. A time machine view on the map lets you revisit past locations and share future plans.',
@@ -23,6 +25,7 @@ const projects: Project[] = [
   },
   {
     name: 'Odoo Spoken CRM',
+    icon: '/spokencrm/icon.svg',
     category: 'B2B · Sales tooling',
     description:
       "A voice-driven CRM interface for Odoo CRM, built for sales teams who work on the move and don't have time to sit down and write endless notes. Speak naturally and a language model routes the request through the right CRM actions — logging meetings, capturing contacts and their roles, and tracking travel and on-site time for every visit. Includes an MCP server to connect via your favorite AI chatbot.",
@@ -32,6 +35,7 @@ const projects: Project[] = [
   },
   {
     name: 'NeverMiss',
+    icon: '/nevermiss/icon.png',
     category: 'Consumer · iOS',
     description:
       'A real alarm for every meeting. NeverMiss reads every calendar synced to your iPhone and rings a full-screen alarm before each one — through silent mode and Focus, until you dismiss it. Two lead times per meeting by default, one tap into the Zoom, Meet or Teams call, and nothing ever leaves the device.',
@@ -41,6 +45,7 @@ const projects: Project[] = [
   },
   {
     name: 'Health Science',
+    icon: '/healthscience/icon.svg',
     category: 'Consumer · iOS',
     description:
       "Apple Health, actually charted. Health Science reads the years of running, sleep, steps, resting heart rate and weight already on your iPhone and draws what the Health app won't: every run on one axis, each week's pace spread as a ridge, and this season's pace against heart rate contoured over last season's. Five themes, and no networking code at all — nothing leaves the device.",
@@ -74,11 +79,16 @@ export function Portfolio() {
                   : setActive(p.name)
               }
             >
-              <div className={styles.projectKicker}>{p.category}</div>
-              <h3 className={styles.projectName}>
-                {p.name}
-                <sup className={styles.tm}>™</sup>
-              </h3>
+              <div className={styles.projectHead}>
+                <img className={styles.projectIcon} src={p.icon} alt="" />
+                <div>
+                  <div className={styles.projectKicker}>{p.category}</div>
+                  <h3 className={styles.projectName}>
+                    {p.name}
+                    <sup className={styles.tm}>™</sup>
+                  </h3>
+                </div>
+              </div>
               <p className={styles.projectBody}>{p.description}</p>
 
               <div className={styles.projectFoot}>
