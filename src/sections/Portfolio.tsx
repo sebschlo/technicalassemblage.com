@@ -39,9 +39,9 @@ const projects: Project[] = [
     category: 'Consumer · iOS',
     description:
       'A real alarm for every meeting. NeverMiss reads every calendar synced to your iPhone and rings a full-screen alarm before each one — through silent mode and Focus, until you dismiss it. Two lead times per meeting by default, one tap into the Zoom, Meet or Teams call, and nothing ever leaves the device.',
-    status: 'Coming to the App Store',
-    url: '/nevermiss/',
-    cta: 'Learn more →',
+    status: 'Available now',
+    url: 'https://apps.apple.com/us/app/nevermiss-calendar-alarms/id6807920502',
+    cta: 'Get it on the App Store →',
   },
   {
     name: 'Health Science',
@@ -49,9 +49,9 @@ const projects: Project[] = [
     category: 'Consumer · iOS',
     description:
       "Apple Health, actually charted. Health Science reads the years of running, sleep, steps, resting heart rate and weight already on your iPhone and draws what the Health app won't: every run on one axis, each week's pace spread as a ridge, and this season's pace against heart rate contoured over last season's. Five themes, and no networking code at all — nothing leaves the device.",
-    status: 'Coming to the App Store',
-    url: '/healthscience/',
-    cta: 'Learn more →',
+    status: 'Available now',
+    url: 'https://apps.apple.com/us/app/health-science/id6812035587',
+    cta: 'Get it on the App Store →',
   },
 ];
 

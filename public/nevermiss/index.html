@@ -114,6 +114,7 @@
       font-weight: 600;
       cursor: pointer;
     }
+    a.button { display: inline-block; text-decoration: none; }
     .button:disabled { opacity: 0.6; cursor: default; }
     .msg { margin-top: 12px; font-size: 0.95rem; }
     .msg.error { color: var(--accent); }
@@ -157,13 +158,8 @@
     </ul>
 
     <div class="cta">
-      <h2>Coming to the App Store</h2>
-      <p>Leave your email and we'll let you know the moment it goes live.</p>
-      <form id="waitlist" novalidate>
-        <input type="email" name="email" placeholder="you@email.com" aria-label="Email address" required />
-        <button class="button" type="submit">Notify me</button>
-      </form>
-      <p class="msg" id="msg" role="status" aria-live="polite"></p>
+      <h2>Available on the App Store</h2>
+      <p><a class="button" href="https://apps.apple.com/us/app/nevermiss-calendar-alarms/id6807920502" target="_blank" rel="noopener noreferrer">Download on the App Store</a></p>
       <p class="fine">Requires iOS 26 or later.</p>
     </div>
 
@@ -174,43 +170,5 @@
     </footer>
   </main>
 
-  <script>
-    // Same Buttondown embed-subscribe endpoint the main site's waitlist modal uses.
-    // Public username only; the no-cors response is opaque, so a sent POST counts as success.
-    (function () {
-      var form = document.getElementById('waitlist');
-      var msg = document.getElementById('msg');
-      var input = form.querySelector('input');
-      var button = form.querySelector('button');
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var email = input.value.trim();
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          msg.className = 'msg error';
-          msg.textContent = 'Please enter a valid email address.';
-          input.focus();
-          return;
-        }
-        msg.className = 'msg';
-        msg.textContent = '';
-        button.disabled = true;
-        button.textContent = 'Adding…';
-        var body = new URLSearchParams({ email: email, tag: 'nevermiss' });
-        fetch('https://buttondown.com/api/emails/embed-subscribe/technicalassemblage', {
-          method: 'POST',
-          mode: 'no-cors',
-          body: body
-        }).then(function () {
-          form.hidden = true;
-          msg.textContent = "You're on the list. We'll be in touch when NeverMiss launches.";
-        }).catch(function () {
-          msg.className = 'msg error';
-          msg.textContent = 'Something went wrong. Please try again.';
-          button.disabled = false;
-          button.textContent = 'Notify me';
-        });
-      });
-    })();
-  </script>
 </body>
 </html>
